@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>测一测，你最像《后会友期》的谁 | 小红书自动发货心理测试</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --card-glass: rgba(255, 255, 255, 0.9);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(145deg, #ffe8e3 0%, #dff3ff 38%, #f3e5ff 72%, #fff5d6 100%);
+      background-attachment: fixed;
+      color: #2d3142;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .font-cute {
+      font-family: 'ZCOOL KuaiLe', 'Noto Sans SC', cursive, sans-serif;
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(1.5deg); }
+    }
+
+    @keyframes trainChug {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-3px); }
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(16px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .animate-float { animation: floatSlow 5s ease-in-out infinite; }
+    .animate-train { animation: trainChug 0.75s ease-in-out infinite; }
+    .animate-enter { animation: fadeSlideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+    .cartoon-card {
+      background: var(--card-glass);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 2.5px solid rgba(255, 255, 255, 0.95);
+      border-radius: 28px;
+      box-shadow: 0 14px 34px -8px rgba(108, 99, 155, 0.14), 0 4px 10px rgba(0, 0, 0, 0.03);
+      transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease;
+    }
+
+    .guest-card:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 0 20px 40px -10px rgba(108, 99, 155, 0.22);
+    }
+
+    .ticket-divider {
+      position: relative;
+      border-top: 2.5px dashed #cbd5e1;
+    }
+    .ticket-divider::before, .ticket-divider::after {
+      content: '';
+      position: absolute;
+      top: -13px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #eef4ff;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    }
+    .ticket-divider::before { left: -34px; }
+    .ticket-divider::after { right: -34px; }
+
+    .option-btn {
+      transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+      border: 2px solid #edf2f7;
+    }
+    .option-btn:hover {
+      border-color: #a78bfa;
+      background: linear-gradient(90deg, #faf5ff 0%, #fff1f2 100%);
+      transform: translateX(4px);
+    }
+    .option-btn.selected {
+      border-color: #8b5cf6;
+      background: linear-gradient(135deg, #ede9fe 0%, #fce7f3 100%);
+      box-shadow: 0 6px 16px rgba(139, 92, 246, 0.2);
+    }
+
+    .btn-primary-gradient {
+      background: linear-gradient(135deg, #ff7eb3 0%, #ff758c 35%, #8b5cf6 100%);
+      box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.45);
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .btn-primary-gradient:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 15px 30px -5px rgba(139, 92, 246, 0.5);
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.4); }
+    ::-webkit-scrollbar-thumb { background: rgba(167, 139, 250, 0.5); border-radius: 99px; }
+  </style>
+</head>
+<body class="relative selection:bg-pink-200 selection:text-pink-900">
+
+  <!-- 背景装饰 -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute -top-16 -left-16 w-72 h-72 rounded-full bg-pink-300/30 blur-3xl"></div>
+    <div class="absolute top-1/3 -right-20 w-80 h-80 rounded-full bg-sky-300/30 blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/4 w-96 h-96 rounded-full bg-amber-200/35 blur-3xl"></div>
+  </div>
+
+  <!-- 顶部导航 -->
+  <header class="relative z-20 max-w-6xl mx-auto px-4 pt-5 pb-2 flex items-center justify-between">
+    <button onclick="goHome()" class="flex items-center gap-2.5 group text-left focus:outline-none">
+      <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-rose-400 via-purple-500 to-indigo-500 flex items-center justify-center text-white shadow-md group-hover:rotate-6 transition-transform">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="3" width="16" height="13" rx="3" fill="rgba(255,255,255,0.2)"/>
+          <path d="M4 11h16"/><path d="M12 3v8"/><path d="m8 19-2 3"/><path d="m18 22-2-3"/><path d="M8 16h8"/>
+          <circle cx="8" cy="14" r="1" fill="currentColor"/><circle cx="16" cy="14" r="1" fill="currentColor"/>
+        </svg>
+      </div>
+      <div>
+        <div class="flex items-center gap-1.5">
+          <span class="font-cute text-xl sm:text-2xl bg-gradient-to-r from-rose-500 via-purple-600 to-sky-600 bg-clip-text text-transparent">后会友期</span>
+          <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 border border-amber-200">小红书自动发货版</span>
+        </div>
+        <p class="text-xs text-slate-500">张掖 ➔ 南迦巴瓦 · 无人值守测试通道</p>
+      </div>
+    </button>
+    <div class="flex items-center gap-2">
+      <button onclick="goHome()" class="px-3.5 py-2 rounded-2xl text-xs sm:text-sm font-bold bg-white/80 hover:bg-white text-slate-700 shadow-sm border border-white transition">
+        🚂 嘉宾图鉴
+      </button>
+      <button onclick="scrollToOrderInput()" class="px-4 py-2 rounded-2xl text-xs sm:text-sm font-bold text-white btn-primary-gradient">
+        🔑 输入订单验证
+      </button>
+    </div>
+  </header>
+
+  <!-- 主容器 -->
+  <main class="relative z-10 max-w-6xl mx-auto px-4 pb-16 pt-3">
+
+    <!-- ==================== 视图 1：首页（固定入口：仅订单输入框 + 8大嘉宾图鉴） ==================== -->
+    <section id="view-home" class="animate-enter space-y-10">
+      
+      <!-- 主视觉 & 订单验证卡片 -->
+      <div class="cartoon-card p-6 sm:p-10 relative overflow-hidden">
+        <div class="max-w-2xl mx-auto text-center space-y-5">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-pink-100 via-purple-100 to-sky-100 border border-white shadow-sm">
+            <span class="text-sm">🎫</span>
+            <span class="text-xs sm:text-sm font-bold text-purple-700">小红书自动发货专用通道 · 随机15-25道题 · 用完即焚</span>
+          </div>
+
+          <h1 class="font-cute text-3xl sm:text-5xl md:text-[50px] leading-tight text-slate-800">
+            测一测，你最像<br class="sm:hidden" />
+            <span class="bg-gradient-to-r from-rose-500 via-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">《后会友期》</span>的谁？
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
+            请在下方输入您的小红书订单号，开启您的友情列车人格深度测试之旅！
+          </p>
+
+          <!-- 核心订单号验证表单 -->
+          <div id="order-box" class="bg-white/95 p-4 sm:p-6 rounded-3xl border-2 border-purple-200 shadow-lg space-y-4 max-w-lg mx-auto">
+            <div class="text-left space-y-1">
+              <label for="order-input" class="text-xs font-black text-slate-700 flex items-center justify-between">
+                <span>小红书订单号：</span>
+              </label>
+              <div class="relative flex items-center">
+                <span class="absolute left-3.5 text-slate-400 font-bold">#</span>
+                <input type="text" id="order-input" placeholder="请输入订单号" maxlength="20"
+                  class="w-full pl-9 pr-4 py-3.5 rounded-2xl bg-slate-50 border-2 border-purple-100 text-slate-800 font-bold focus:bg-white focus:border-purple-500 focus:outline-none transition text-sm sm:text-base tracking-wider uppercase" />
+              </div>
+            </div>
+
+            <button onclick="verifyAndStartQuiz()" class="w-full py-4 rounded-2xl text-base font-black text-white btn-primary-gradient flex items-center justify-center gap-2 cursor-pointer">
+              <span>🚀 验证订单号并开启测试</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
+            </button>
+
+            <p id="lock-warning" class="text-xs text-rose-500 font-bold hidden text-center pt-1"></p>
+          </div>
+        </div>
+
+        <div class="ticket-divider mt-8 pt-5 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-lg bg-rose-50 text-rose-600 font-bold">小红书自动发货</span>
+            <span>➔</span>
+            <span class="px-2.5 py-1 rounded-lg bg-sky-50 text-sky-600 font-bold">用完即焚机制</span>
+          </div>
+          <div class="font-medium">✨ 每个订单号仅限测一次</div>
+        </div>
+      </div>
+
+      <!-- 八位旅行嘉宾图鉴区 -->
+      <div class="space-y-5">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 px-1">
+          <div>
+            <div class="inline-flex items-center gap-1.5 text-xs font-bold text-purple-600 bg-purple-100/80 px-3 py-1 rounded-full mb-1.5">
+              <span>✨ CHARACTER GALLERY</span>
+            </div>
+            <h2 class="font-cute text-2xl sm:text-3xl text-slate-800">列车八大旅行嘉宾 · 友情性格图鉴</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-500">点击任意嘉宾卡片，查看 Ta 的详细性格档案 👆</p>
+        </div>
+
+        <div id="guests-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- JS 动态渲染 8 位嘉宾 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 视图 2：答题互动页（12道精简题目） ==================== -->
+    <section id="view-quiz" class="hidden animate-enter max-w-3xl mx-auto">
+      <div class="cartoon-card p-5 sm:p-8 space-y-6">
+        <div class="space-y-2.5">
+          <div class="flex items-center justify-between text-xs sm:text-sm font-bold">
+            <span class="text-rose-500 flex items-center gap-1">🚩 张掖站</span>
+            <span id="quiz-progress-text" class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 font-extrabold">第 1 / 12 题</span>
+            <span class="text-sky-600 flex items-center gap-1">🏔️ 南迦巴瓦</span>
+          </div>
+
+          <div class="relative h-4 bg-slate-100 rounded-full overflow-visible border border-slate-200/80 p-0.5">
+            <div id="quiz-progress-bar" class="h-full rounded-full bg-gradient-to-r from-rose-400 via-purple-500 to-sky-400 transition-all duration-300" style="width: 8%"></div>
+            <div id="quiz-train-icon" class="absolute -top-3.5 transition-all duration-300 text-xl animate-train select-none" style="left: calc(8% - 12px)">🚂</div>
+          </div>
+        </div>
+
+        <div id="question-container" class="py-2 space-y-5">
+          <div class="space-y-2">
+            <span id="question-tag" class="inline-block text-xs font-bold px-3 py-1 rounded-xl bg-amber-100 text-amber-700">日常小剧场</span>
+            <h2 id="question-title" class="text-xl sm:text-2xl font-black text-slate-800 leading-snug">正在加载题目...</h2>
+          </div>
+          <div id="options-list" class="space-y-3"></div>
+        </div>
+
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+          <button id="prev-btn" onclick="prevQuestion()" class="px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 disabled:opacity-40 transition flex items-center gap-1.5">
+            ← 上一题
+          </button>
+          <span class="text-xs text-slate-400">凭第一直觉选择，结果最准哦 ✨</span>
+          <button onclick="goHome()" class="px-3.5 py-2 rounded-2xl text-xs font-bold text-rose-500 hover:bg-rose-50 transition">退出</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 视图 3：深度测评结果页（用完即焚 + 禁止后退 + 约400-500字解析） ==================== -->
+    <section id="view-result" class="hidden animate-enter max-w-4xl mx-auto space-y-6">
+      
+      <!-- 安全提示横幅 -->
+      <div class="bg-amber-100/90 border-2 border-amber-300 rounded-2xl p-3.5 text-xs sm:text-sm text-amber-800 font-bold flex items-center justify-between gap-2 shadow-sm">
+        <span>🔥 订单号已触发【用完即焚】机制，当前报告页已锁定状态。请截图或长按保存海报！</span>
+        <span id="result-order-tag" class="px-2 py-0.5 rounded bg-white text-amber-900 font-mono text-xs">订单：P6809...</span>
+      </div>
+
+      <div class="cartoon-card overflow-hidden">
+        <div id="result-banner" class="p-6 sm:p-9 text-white relative overflow-hidden bg-gradient-to-r from-rose-500 via-purple-600 to-indigo-600">
+          <div class="absolute -right-10 -bottom-10 w-52 h-52 rounded-full bg-white/10 blur-xl pointer-events-none"></div>
+          <div class="relative z-10 flex flex-col md:flex-row items-center gap-6 sm:gap-8">
+            <div class="w-40 h-40 sm:w-44 sm:h-44 rounded-3xl bg-white/95 p-2 shadow-xl flex-shrink-0 border-4 border-white/60 flex items-center justify-center" id="result-avatar-box"></div>
+            <div class="text-center md:text-left space-y-2.5 flex-1">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs sm:text-sm font-bold">
+                <span>🎫 专属友情灵魂车票</span>
+                <span>·</span>
+                <span id="result-match-score" class="text-amber-200 font-black">灵魂契合度 95%</span>
+              </div>
+              <h1 class="font-cute text-3xl sm:text-4xl md:text-5xl tracking-wide drop-shadow">
+                你最像 <span id="result-name" class="underline decoration-amber-300 decoration-wavy underline-offset-4">张萌</span>
+              </h1>
+              <p id="result-codename" class="text-base sm:text-lg font-bold text-white/95">「全局掌控的破冰女王」</p>
+              <div class="bg-black/15 rounded-2xl px-4 py-2.5 text-xs sm:text-sm italic text-white/95 border border-white/15">
+                “<span id="result-motto">人生没有白走的路，每场相遇都值得全力以赴。</span>”
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-7 items-center bg-white/60">
+          <div class="lg:col-span-6 flex flex-col items-center">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-base">📊</span>
+              <h3 class="font-black text-slate-800 text-base sm:text-lg">六维友情性格雷达模型</h3>
+            </div>
+            <div class="w-full max-w-[330px] aspect-square flex items-center justify-center bg-white/90 rounded-3xl p-3 shadow-inner border border-purple-100">
+              <canvas id="radar-canvas" width="320" height="320"></canvas>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 space-y-5">
+            <div>
+              <h3 class="font-black text-slate-800 text-base sm:text-lg mb-3 flex items-center gap-2">
+                <span>🏷️</span> 你的专属友情高光标签
+              </h3>
+              <div id="result-tags" class="flex flex-wrap gap-2"></div>
+            </div>
+            <div class="bg-white/90 rounded-2xl p-4 border border-slate-100 space-y-2.5">
+              <h4 class="text-xs font-extrabold text-slate-400 uppercase tracking-wider">维度能量值明细</h4>
+              <div id="dimension-bars" class="space-y-2 text-xs font-bold"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ticket-divider mx-6"></div>
+
+        <!-- 详细测评结果解析（400-500字丰富内容） -->
+        <div class="p-6 sm:p-8 space-y-6">
+          <div class="rounded-3xl bg-gradient-to-br from-rose-50/90 to-orange-50/80 p-5 sm:p-6 border border-rose-100 space-y-2">
+            <h3 class="font-black text-rose-700 text-base sm:text-lg flex items-center gap-2">
+              <span class="w-7 h-7 rounded-xl bg-rose-500 text-white flex items-center justify-center text-sm">01</span>
+              性格特质深度分析（全方位解析）
+            </h3>
+            <p id="result-trait-analysis" class="text-sm sm:text-[15px] text-slate-700 leading-relaxed text-justify"></p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="rounded-3xl bg-gradient-to-br from-sky-50/90 to-indigo-50/80 p-5 sm:p-6 border border-sky-100 space-y-2">
+              <h3 class="font-black text-sky-700 text-base sm:text-lg flex items-center gap-2">
+                <span class="w-7 h-7 rounded-xl bg-sky-500 text-white flex items-center justify-center text-sm">02</span>
+                交友真心建议
+              </h3>
+              <p id="result-friendship-advice" class="text-sm sm:text-[15px] text-slate-700 leading-relaxed text-justify"></p>
+            </div>
+
+            <div class="rounded-3xl bg-gradient-to-br from-fuchsia-50/90 to-pink-50/80 p-5 sm:p-6 border border-fuchsia-100 space-y-2">
+              <h3 class="font-black text-fuchsia-700 text-base sm:text-lg flex items-center gap-2">
+                <span class="w-7 h-7 rounded-xl bg-fuchsia-500 text-white flex items-center justify-center text-sm">03</span>
+                恋爱态度与建议
+              </h3>
+              <p id="result-love-advice" class="text-sm sm:text-[15px] text-slate-700 leading-relaxed text-justify"></p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="rounded-3xl bg-emerald-50/90 p-5 border-2 border-emerald-200/80 flex items-start gap-4">
+              <div id="best-match-avatar" class="w-16 h-16 rounded-2xl bg-white p-1 shadow-sm flex-shrink-0 border border-emerald-200"></div>
+              <div class="space-y-1">
+                <span class="inline-block text-[11px] font-black px-2.5 py-0.5 rounded-full bg-emerald-500 text-white">💚 最合拍的朋友类型</span>
+                <h4 id="best-match-name" class="font-black text-slate-800 text-base">马天宇 · 温柔治愈系</h4>
+                <p id="best-match-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed"></p>
+              </div>
+            </div>
+
+            <div class="rounded-3xl bg-amber-50/90 p-5 border-2 border-amber-200/80 flex items-start gap-4">
+              <div id="clash-match-avatar" class="w-16 h-16 rounded-2xl bg-white p-1 shadow-sm flex-shrink-0 border border-amber-200"></div>
+              <div class="space-y-1">
+                <span class="inline-block text-[11px] font-black px-2.5 py-0.5 rounded-full bg-amber-500 text-white">⚡ 最容易闹别扭的朋友</span>
+                <h4 id="clash-match-name" class="font-black text-slate-800 text-base">青稚 · 极客理性派</h4>
+                <p id="clash-match-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 bg-slate-50/90 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+          <button onclick="generatePoster()" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl text-sm sm:text-base font-black text-white btn-primary-gradient flex items-center justify-center gap-2 cursor-pointer">
+            <span>📸 一键生成/保存结果海报</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 嘉宾档案 Modal -->
+  <div id="guest-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm" onclick="closeModalOnBackdrop(event, 'guest-modal')">
+    <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border-4 border-white animate-enter">
+      <div id="modal-header-bg" class="p-6 text-white flex items-center gap-5 relative">
+        <button onclick="closeModal('guest-modal')" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/20 text-white flex items-center justify-center font-bold">✕</button>
+        <div id="modal-avatar" class="w-24 h-24 rounded-2xl bg-white p-1.5 shadow-md flex-shrink-0"></div>
+        <div>
+          <span id="modal-tag" class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-white/25">代号</span>
+          <h3 id="modal-name" class="font-cute text-3xl mt-1">嘉宾名</h3>
+          <p id="modal-motto" class="text-xs text-white/90 mt-1 italic">座右铭</p>
+        </div>
+      </div>
+      <div class="p-6 space-y-4">
+        <div>
+          <h4 class="text-xs font-extrabold text-slate-400 uppercase mb-1">性格底色侧写</h4>
+          <p id="modal-bio" class="text-sm text-slate-700 leading-relaxed"></p>
+        </div>
+        <div class="flex flex-wrap gap-1.5" id="modal-badges"></div>
+        <div class="pt-2 flex justify-end">
+          <button onclick="closeModal('guest-modal')" class="px-5 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200">关闭档案</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 分享海报 Modal -->
+  <div id="poster-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm" onclick="closeModalOnBackdrop(event, 'poster-modal')">
+    <div class="bg-white rounded-3xl max-w-md w-full p-5 space-y-4 shadow-2xl animate-enter max-h-[92vh] flex flex-col">
+      <div class="flex items-center justify-between">
+        <h3 class="font-black text-slate-800 text-base">🎫 你的专属友情车票海报</h3>
+        <button onclick="closeModal('poster-modal')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 font-bold">✕</button>
+      </div>
+      <div class="overflow-y-auto flex-1 rounded-2xl border border-slate-200 bg-slate-50 flex items-center justify-center p-2">
+        <img id="poster-preview-img" alt="测评海报" class="w-full h-auto rounded-xl shadow-md" />
+      </div>
+      <button onclick="downloadPoster()" class="w-full py-3.5 rounded-2xl text-sm font-black text-white btn-primary-gradient">
+        ⬇️ 保存高清海报到相册 / 长按截图保存
+      </button>
+    </div>
+  </div>
+
+  <!-- 轻提示 Toast -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-2xl bg-slate-800/95 text-white text-xs sm:text-sm font-bold shadow-xl opacity-0 pointer-events-none transition-opacity duration-300">
+    提示信息
+  </div>
+
+  <!-- ==================== 核心业务与校验逻辑 ==================== -->
+  <script>
+    const DIMENSIONS = [
+      { key: 'E', label: '情绪浓度', color: '#f43f5e' },
+      { key: 'B', label: '社交边界', color: '#8b5cf6' },
+      { key: 'R', label: '理性克制', color: '#0ea5e9' },
+      { key: 'M', label: '共情包容', color: '#10b981' },
+      { key: 'D', label: '直接坦率', color: '#f59e0b' },
+      { key: 'N', label: '念旧执着', color: '#ec4899' }
+    ];
+
+    const GUESTS = [
+      {
+        id: 'zhangmeng',
+        name: '张萌',
+        codename: '全局掌控的破冰女王',
+        motto: '人生没有白走的路，每场相遇都值得全力以赴。',
+        gradient: 'from-rose-500 via-pink-500 to-amber-500',
+        cardBg: 'from-rose-50 to-pink-50',
+        accentColor: '#e11d48',
+        shortDesc: '自带BGM的社交永动机，高情商破冰担当，把每个人的体面照顾到位。',
+        tags: ['#破冰永动机', '#高情商端水', '#行动派', '#热场担当'],
+        vector: { E: 88, B: 62, R: 74, M: 82, D: 86, N: 75 },
+        bestMatchId: 'matianyu',
+        bestMatchReason: '你的风风火火能被马天宇温柔的边界感完美接住，一动一静，默契满分。',
+        clashMatchId: 'qingzhi',
+        clashMatchReason: '你习惯快速推进关系，而青稚偏爱慢热冷静，初期容易因为节奏不同产生小误会。',
+        traitAnalysis: '你就像列车上的“社交引擎”，拥有极强的环境适应力与破冰天赋。在群体中，你敏锐捕捉到冷场，总能第一时间抛出话题、调动气氛，把每个人的情绪都照顾得妥妥帖帖。你做事雷厉风行、目标感极强，习惯把主动权握在自己手里。虽然看起来大大咧咧，但其实非常重情义，对认可的朋友掏心掏肺，属于典型的外向热忱型组织者。在面对复杂的群体关系时，你总能迅速理清核心矛盾，用高情商的沟通方式化解尴尬。你的能量场非常强大，能够带动身边的人一起积极向前，是不折不扣的团队主心骨。',
+        friendshipAdvice: '热情周到是你的王牌，但扮演照顾者偶尔会让你感到疲惫。建议适当卸下让所有人开心的包袱，允许自己偶尔安静发呆。真正的深交不需要时刻营业，偶尔向信赖的老友倾诉脆弱，会收获意想不到的治愈与温暖。',
+        loveAdvice: '在感情里你是敢爱敢恨的行动派，喜欢就会全力以赴。但亲密关系不是项目管理，多给伴侣留一点自由与慢慢成长的空间，学会适度示弱与撒娇，能让对方更有被需要的幸福感。',
+        svg: `<svg viewBox="0 0 160 160" class="w-full h-full"><rect width="160" height="160" rx="26" fill="#ffe4e6"/><path d="M34 68 C22 92, 26 126, 44 138 C56 144, 104 144, 116 138 C134 126, 138 92, 126 68 C126 36, 106 22, 80 22 C54 22, 34 36, 34 68 Z" fill="#3b1d2a"/><path d="M42 146 C44 122, 60 114, 80 114 C100 114, 116 122, 118 146 Z" fill="#e11d48"/><rect x="72" y="96" width="16" height="20" rx="8" fill="#fed7aa"/><path d="M50 64 C50 44, 110 44, 110 64 C110 88, 98 104, 80 104 C62 104, 50 88, 50 64 Z" fill="#ffedd5"/><rect x="54" y="31" width="22" height="12" rx="5" fill="#1e1b4b" stroke="#fbbf24" stroke-width="2"/><rect x="84" y="31" width="22" height="12" rx="5" fill="#1e1b4b" stroke="#fbbf24" stroke-width="2"/><circle cx="67" cy="70" r="4.2" fill="#1e293b"/><circle cx="93" cy="70" r="4.2" fill="#1e293b"/><path d="M72 86 Q80 94 88 86 Z" fill="#f43f5e"/></svg>`
+      },
+      {
+        id: 'matianyu',
+        name: '马天宇',
+        codename: '清风拂面的治愈系观察家',
+        motto: '舒服的关系，是各自自在，又彼此照亮。',
+        gradient: 'from-sky-500 via-blue-500 to-teal-400',
+        cardBg: 'from-sky-50 to-teal-50',
+        accentColor: '#0284c7',
+        shortDesc: '边界感满分的温柔绅士，不喧宾夺主却总在细微处递上一杯热水。',
+        tags: ['#温柔边界', '#细节控', '#清冷治愈', '#安静倾听'],
+        vector: { E: 64, B: 88, R: 82, M: 89, D: 60, N: 80 },
+        bestMatchId: 'wenjier',
+        bestMatchReason: '你们拥有极高的精神共鸣与细腻内心，并肩看一场日落就能懂彼此未说出口的心事。',
+        clashMatchId: 'baixiaochun',
+        clashMatchReason: '白小纯说话直来直去，而你习惯留白与分寸，偶尔会被直球突击弄得有点招架不住。',
+        traitAnalysis: '你是朋友圈里如高原清风般令人安心的存在。你拥有极佳的分寸感，从不强行闯入别人的生活，却总能敏锐察觉到细微落差。你的内核非常稳定，不爱凑无谓热闹。面对冲突时习惯先消化情绪再温和沟通，看似佛系随和，实则对原则有着极高要求。你擅长用润物细无声的方式陪伴同伴，不张扬、不刻意，却能在关键时刻给予最坚定的精神支持。你的内心世界丰富而宁静，宛如一首流淌的散文诗。',
+        friendshipAdvice: '你的体贴让每个人感到舒适，但过强的边界感有时会让真心想靠近的朋友觉得有层薄雾。不妨偶尔卸下防备，主动向朋友分享你的小喜好或小任性，会让人觉得你更加真实可爱。',
+        loveAdvice: '在亲密关系中你是细水长流型的理想伴侣。不过恋爱里偶尔也需要直白的偏爱表达，别总让对方猜你的心思，把爱意大声说出来能让感情迅速升温。',
+        svg: `<svg viewBox="0 0 160 160" class="w-full h-full"><rect width="160" height="160" rx="26" fill="#e0f2fe"/><path d="M40 146 C44 120, 62 114, 80 114 C98 114, 116 120, 120 146 Z" fill="#38bdf8"/><rect x="72" y="95" width="16" height="21" rx="8" fill="#fed7aa"/><path d="M52 63 C52 43, 108 43, 108 63 C108 87, 96 103, 80 103 C64 103, 52 87, 52 63 Z" fill="#ffedd5"/><path d="M48 64 C46 34, 68 24, 84 26 C102 26, 116 40, 112 64 C106 50, 96 46, 84 50 Z" fill="#334155"/><path d="M61 69 Q67 64 73 69" stroke="#1e293b" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M87 69 Q93 64 99 69" stroke="#1e293b" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M73 86 Q80 91 87 86" stroke="#e11d48" stroke-width="2.3" fill="none" stroke-linecap="round"/></svg>`
+      },
+      {
+        id: 'lina',
+        name: '厉娜',
+        codename: '潇洒通透的率真侠客',
+        motto: '合得来就一起大笑，合不来也祝你前程似锦。',
+        gradient: 'from-amber-400 via-orange-400 to-yellow-500',
+        cardBg: 'from-amber-50 to-yellow-50',
+        accentColor: '#d97706',
+        shortDesc: '酷飒短发下的烟火气灵魂，爱憎分明不内耗，最靠谱的旅行搭子。',
+        tags: ['#反内耗', '#率真直球', '#烟火气', '#靠谱搭子'],
+        vector: { E: 74, B: 78, R: 76, M: 72, D: 92, N: 68 },
+        bestMatchId: 'xufei',
+        bestMatchReason: '同样潇洒的灵魂，一个眼神就能懂对方的笑点与底线，在一起轻松快乐。',
+        clashMatchId: 'wangzixuan',
+        clashMatchReason: '你追求随性自在，而王子璇习惯按计划行事，在花钱和节奏上容易小斗嘴。',
+        traitAnalysis: '你拥有让人羡慕的反内耗体质。性格里带着侠客的爽朗与通透，说话直接坦率、讨厌虚伪客套。旅行中遇到突发状况不抱怨不甩锅，卷起袖子就能解决。你讲义气又护短，是让人极度放心的铁杆搭子。你对待生活有着极其通透的洒脱感，绝不为了迎合世俗而委屈自己。你的快乐简单而纯粹，喜欢大口吃肉大声欢笑，能够迅速点燃整个团队的烟火气与松弛感。',
+        friendshipAdvice: '直爽是稀缺品质，但在面对敏感的朋友时，太直接的真话偶尔会变成无心之失，多一点温和的铺垫会让你的坦率更具包容力。',
+        loveAdvice: '崇尚势均力敌、彼此独立的健康状态。在亲密关系中遇到分歧时别急着一刀切下结论，多给彼此留一点磨合的缓冲带。',
+        svg: `<svg viewBox="0 0 160 160" class="w-full h-full"><rect width="160" height="160" rx="26" fill="#fef3c7"/><path d="M38 146 C42 120, 60 114, 80 114 C100 114, 118 120, 122 146 Z" fill="#f59e0b"/><rect x="72" y="95" width="16" height="21" rx="8" fill="#fed7aa"/><path d="M51 64 C51 44, 109 44, 109 64 C109 88, 97 104, 80 104 C63 104, 51 88, 51 64 Z" fill="#ffedd5"/><path d="M47 68 C45 36, 66 22, 82 23 C102 23, 117 38, 113 68 Z" fill="#1e293b"/><circle cx="67" cy="69" r="4" fill="#1e293b"/><circle cx="93" cy="69" r="4" fill="#1e293b"/><path d="M71 84 Q80 93 89 84 Z" fill="#fff" stroke="#e11d48" stroke-width="2"/></svg>`
+      },
+      {
+        id: 'xufei',
+        name: '许飞',
+        codename: '人间清醒的民谣诗人',
+        motto: '不必急着赶路，风吹到哪一页就读哪一页。',
+        gradient: 'from-indigo-600 via-purple-600 to-violet-500',
+        cardBg: 'from-indigo-50 to-purple-50',
+        accentColor: '#6d28d9',
+        shortDesc: '黑框眼镜后藏着通透哲学，慢热深情，总能一句话点醒迷茫灵魂。',
+        tags: ['#人间清醒', '#慢热深情', '#金句制造', '#松弛感'],
+        vector: { E: 58, B: 85, R: 90, M: 78, D: 80, N: 86 },
+        bestMatchId: 'lina',
+        bestMatchReason: '老友式的默契无需多言，厉娜的洒脱能破开你的慢热外壳。',
+        clashMatchId: 'zhangmeng',
+        clashMatchReason: '张萌的高频热情与紧凑日程，可能会让你觉得精神电量消耗过快。',
+        traitAnalysis: '你是人群中自带诗意与哲学感的一抹清泉。外表冷静克制，习惯先观察再开口，但每次发声都能直击本质。你拥有独立的精神世界，不随波逐流。虽然慢热，但对认定的老友有着近乎执着的深情。你享受孤独也懂得享受陪伴，在音乐与文字中构筑起坚固的精神城堡。你的通透来自于对生活本质的深刻理解，不浮躁、不盲从，举手投足间散发着迷人的松弛感。',
+        friendshipAdvice: '通透独立让你很少受内伤，但过度的自我消化会让关心你的人无从下手。偶尔向朋友求助、分享内心的脆弱，会成为拉近彼此距离的绝佳契机。',
+        loveAdvice: '爱情于你是两个独立灵魂的并肩同行，最看重精神共振。恋爱中多增加一些即时反馈与日常小浪漫，能让理性的克制增添不少甜度。',
+        svg: `<svg viewBox="0 0 160 160" class="w-full h-full"><rect width="160" height="160" rx="26" fill="#ede9fe"/><path d="M38 146 C42 120, 60 114, 80 114 C100 114, 118 120, 122 146 Z" fill="#6d28d9"/><rect x="72" y="95" width="16" height="21" rx="8" fill="#fed7aa"/><path d="M52 64 C52 44, 108 44, 108 64 C108 88, 96 104, 80 104 C64 104, 52 88, 52 64 Z" fill="#ffedd5"/><path d="M49 65 C48 34, 68 23, 83 24 C102 24, 114 38, 111 65 Z" fill="#1e293b"/><rect x="55" y="61" width="21" height="15" rx="4" fill="rgba(255,255,255,0.35)" stroke="#0f172a" stroke-width="2.8"/><rect x="84" y="61" width="21" height="15" rx="4" fill="rgba(255,255,255,0.35)" stroke="#0f172a" stroke-width="2.8"/><path d="M74 87 Q80 90 86 87" stroke="#9f1239" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>`
+      },
+      {
+        id: 'wangzixuan',
+        name: '王子璇',
+        codename: '精打细算的元气小管家',
+        motto: '把每一分预算花在刀刃上，快乐才能续航更久！',
+        gradient: 'from-pink-400 via-rose-400 to-orange-300',
+        cardBg: 'from-pink-50 to-orange-50',
+        accentColor: '#ec4899',
+        shortDesc: '甜美高马尾下的务实派小可爱，认真负责，最怕大家吃亏。',
+        tags: ['#人间小算盘', '#务实派', '#元气管家', '#反差萌'],
+        vector: { E: 82, B: 66, R: 84, M: 75, D: 83, N: 72 },
+        bestMatchId: 'qingzhi',
+        bestMatchReason: '一个管账单细节一个控全局节奏，联手能把复杂行程安排得明明白白。',
+        clashMatchId: 'lina',
+        clashMatchReason: '你习惯提前规划，而厉娜随性花钱，在花钱和行程节奏上容易小斗嘴。',
+        traitAnalysis: '你拥有元气外表，内心却住着务实的管家。在团队中责任感爆棚，对开销与时间节点格外敏感。虽然有点较真，但出发点全是保护大家不被坑。你的情绪鲜活真实，坦荡的少女感让人觉得既可靠又可爱。你有着极强的执行力与生活规划能力，把繁琐的日常安排得井井有条，是团队里不可或缺的贴心小管家。',
+        friendshipAdvice: '认真负责让你成为团队支柱，但别陷入别人没我上心的委屈里。允许计划有意外惊喜，松弛下来同样快乐。',
+        loveAdvice: '你非常真诚且有规划意识，更看重对方实实在在的付出。多给伴侣一些夸奖，少一点操心，你会被宠得更无忧无虑。',
+        svg: `<svg viewBox="0 0 160 160" class="w-full h-full"><rect width="160" height="160" rx="26" fill="#fce7f3"/><path d="M98 26 C122 22, 134 48, 122 72 C116 56, 108 42, 95 36 Z" fill="#451a03"/><path d="M40 146 C44 120, 62 114, 80 114 C98 114, 116 120, 120 146 Z" fill="#fb7185"/><rect x="72" y="95" width="16" height="21" rx="8" fill="#fed7aa"/><path d="M51 64 C51 44, 109 44, 109 64 C109 88, 97 104, 80 104 C63 104, 51 88, 51 64 Z" fill="#ffedd5"/><circle cx="66" cy="70" r="4.5" fill="#1e293b"/><circle cx="94" cy="70" r="4.5" fill="#1e293b"/><path d="M73 85 Q80 92 87 85" stroke="#e11d48" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>`
+      },
+      {
+        id: 'wenjier',
+        name: '文吉儿',
+        codename: '细腻共情的树洞作家',
+        motto: '所有温柔的文字与陪伴，都是为了接住一颗敏感的心。',
+        gradient: 'from-emerald-400 via-teal-500 to-cyan-500',
+        cardBg: 'from-emerald-50 to-cyan-50',
+        accentColor: '#0d9488',
+        shortDesc: '温婉长发下的共情天花板，擅长倾听与记录，把脆弱捧在手心。',
+        tags: ['#树洞体质', '#细腻文艺', '#满分共情', '#温柔记录'],
+        vector: { E: 85, B: 60, R: 68, M: 95, D: 56, N: 90 },
+        bestMatchId: 'matianyu',
+        bestMatchReason: '同样对世界保持温柔敬畏的细腻灵魂，相处毫无压迫感。',
+        clashMatchId: 'baixiaochun',
+        clashMatchReason: '你习惯把情绪藏在隐喻里，白小纯是直男脑回路，经常接收不到信号。',
+        traitAnalysis: '你是朋友圈最治愈的树洞。拥有极高共情力，别人随口一提的小情绪，你能敏锐感知。你待人真诚温和，习惯站在对方角度体谅难处。内心念旧，习惯用文字或小物件珍藏感动。你对待每一段关系都小心翼翼地呵护，用细腻的文字与真诚的倾听抚平他人的焦虑。你的善良没有攻击性，却有着润物细无声的强大治愈力量。',
+        friendshipAdvice: '共情力让你拥有极佳人缘，但也容易吸走太多负面情绪导致内耗。学会为心灵撑保护伞，勇敢表达“今天我也需要休息”。',
+        loveAdvice: '恋爱中渴望灵魂深度交融。切忌过度脑补或默默忍让，有委屈及时沟通，真正爱你的人最怕你独自难过。',
+        svg: `<svg viewBox="0 0 160 160" class="w-full h-full"><rect width="160" height="160" rx="26" fill="#d1fae5"/><path d="M40 60 C34 95, 36 130, 46 146 L114 146 C124 130, 126 95, 120 60 Z" fill="#1e293b"/><path d="M44 146 C46 120, 62 114, 80 114 C98 114, 114 120, 116 146 Z" fill="#14b8a6"/><rect x="72" y="95" width="16" height="21" rx="8" fill="#fed7aa"/><path d="M52 64 C52 44, 108 44, 108 64 C108 88, 96 104, 80 104 C64 104, 52 88, 52 64 Z" fill="#ffedd5"/><ellipse cx="66" cy="70" rx="4" ry="4.6" fill="#1e293b"/><ellipse cx="94" cy="70" rx="4" ry="4.6" fill="#1e293b"/><path d="M74 86 Q80 91 86 86" stroke="#e11d48" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>`
+      },
+      {
+        id: 'baixiaochun',
+        name: '白小纯',
+        codename: '口嫌体正直的热血少年',
+        motto: '嘴上说随便，真有事我第一个冲上去扛！',
+        gradient: 'from-orange-500 via-red-500 to-amber-500',
+        cardBg: 'from-orange-50 to-red-50',
+        accentColor: '#ea580c',
+        shortDesc: '电竞少年般的率真大男孩，嘴硬心软第一名，把兄弟姐妹宠上天。',
+        tags: ['#嘴硬心软', '#热血直球', '#重义气', '#快乐源泉'],
+        vector: { E: 84, B: 64, R: 62, M: 76, D: 94, N: 78 },
+        bestMatchId: 'zhangmeng',
+        bestMatchReason: '张萌的热情能瞬间点燃你的保护欲，凑在一起就是快乐的王炸喜剧人。',
+        clashMatchId: 'wenjier',
+        clashMatchReason: '你有话直说讨厌猜谜，文吉儿习惯含蓄表达，聊天经常不在同个频道。',
+        traitAnalysis: '你是个把喜怒哀乐写在脸上的热血少年，直来直去毫无城府。你有极强的嘴硬心软反差萌——嘴上嫌弃麻烦，身体却诚实地帮大家扛最重的行李。你重义气护短，是团队里的开心果。你身上有着纯粹的少年感，讨厌虚伪客套。虽然偶尔会因为心直口快闹出小误会，但关键时刻绝对是第一个冲上去遮风挡雨的可靠伙伴。',
+        friendshipAdvice: '赤诚仗义让人死心塌地，但太快脱口而出的直球吐槽可能会戳中别人。说话前留两秒钟思考，把刀子嘴变成暖心话。',
+        loveAdvice: '大男孩式宠爱，会把好吃的和安全感全塞给对方。学会更坦诚表达爱意，别总用开玩笑掩饰深情。',
+        svg: `<svg viewBox="0 0 160 160" class="w-full h-full"><rect width="160" height="160" rx="26" fill="#ffedd5"/><path d="M36 146 C40 118, 58 112, 80 112 C102 112, 120 118, 124 146 Z" fill="#ea580c"/><rect x="72" y="95" width="16" height="20" rx="8" fill="#fed7aa"/><path d="M51 64 C51 44, 109 44, 109 64 C109 88, 97 104, 80 104 C63 104, 51 88, 51 64 Z" fill="#ffedd5"/><path d="M47 64 C46 34, 66 22, 82 23 C102 23, 115 36, 113 64 Z" fill="#27272a"/><circle cx="67" cy="70" r="4.2" fill="#1e293b"/><circle cx="93" cy="70" r="4.2" fill="#1e293b"/><path d="M70 83 Q80 95 90 83 Z" fill="#fff" stroke="#dc2626" stroke-width="2"/></svg>`
+      },
+      {
+        id: 'qingzhi',
+        name: '青稚',
+        codename: '冷静破局的战术军师',
+        motto: '情绪解决不了问题，但清晰的思路和行动可以。',
+        gradient: 'from-blue-600 via-indigo-600 to-slate-700',
+        cardBg: 'from-blue-50 to-slate-100',
+        accentColor: '#2563eb',
+        shortDesc: '沉稳顺毛短发下的顶级大脑，复盘与破局，关键时刻最靠谱的定海神针。',
+        tags: ['#冷静战术', '#定海神针', '#逻辑控', '#外冷内稳'],
+        vector: { E: 55, B: 82, R: 94, M: 74, D: 84, N: 74 },
+        bestMatchId: 'wangzixuan',
+        bestMatchReason: '你定方向她抠细节，强强联手能把混乱局面治理得井井有条。',
+        clashMatchId: 'zhangmeng',
+        clashMatchReason: '面对张萌排山倒海般的热情与密集社交安排，喜欢冷静思考的你容易感到节奏被打乱。',
+        traitAnalysis: '你是团队里冷静可靠的战术军师。遇到突发状况时，当别人还在情绪上头，你已迅速用逻辑分析利弊并给出最优解。说话言简意赅。熟悉后会发现你非常有担当，答应的事百分之百做到。你拥有极其冷静理性的头脑，擅长从纷繁复杂的局势中抽丝剥茧。你的稳重是团队最大的定海神针。',
+        friendshipAdvice: '强大的理性思维极少踩坑，但倾诉时下意识给出的解决方案会让对方觉得缺少情绪安慰。先共情再提建议。',
+        loveAdvice: '踏实稳重责任感极强。恋爱中适当放下理性分析模式，陪另一半做些浪漫有趣的小事。',
+        svg: `<svg viewBox="0 0 160 160" class="w-full h-full"><rect width="160" height="160" rx="26" fill="#dbeafe"/><path d="M38 146 C42 120, 60 114, 80 114 C100 114, 118 120, 122 146 Z" fill="#1d4ed8"/><rect x="72" y="95" width="16" height="21" rx="8" fill="#fed7aa"/><path d="M52 64 C52 44, 108 44, 108 64 C108 88, 96 104, 80 104 C64 104, 52 88, 52 64 Z" fill="#ffedd5"/><path d="M49 66 C48 34, 68 23, 80 23 C92 23, 112 34, 111 66 Z" fill="#0f172a"/><circle cx="66" cy="70" r="3.8" fill="#0f172a"/><circle cx="94" cy="70" r="3.8" fill="#0f172a"/><path d="M74 86 Q80 90 86 86" stroke="#be123c" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>`
+      }
+    ];
+
+    /**
+     * 精简题库：共计 12 道短小精悍的日常生活题
+     */
+    const QUESTION_BANK = [
+      { tag: '微信社交', q: '朋友发来60秒长语音，你的反应？', options: [
+        { text: '立刻转文字，看重点再回', delta: { R: 8, B: 6 } },
+        { text: '边干活边听完，回一条更长的', delta: { E: 8, D: 5 } },
+        { text: '戴耳机认真听完，怕漏情绪', delta: { M: 9, E: 5 } },
+        { text: '先放着，有空再慢慢听', delta: { B: 8, R: 4 } }
+      ]},
+      { tag: '朋友圈动态', q: '看到好友发了一条明显情绪低落的朋友圈？', options: [
+        { text: '立刻私聊问“咋啦，需要陪聊吗”', delta: { E: 8, M: 7 } },
+        { text: '先点赞关注，等对方想说时再找我', delta: { B: 8, M: 5 } },
+        { text: '直接打电话过去用笑声逗开心', delta: { D: 8, E: 7 } },
+        { text: '留一句温柔隐晦的鼓励暗号', delta: { M: 8, N: 6 } }
+      ]},
+      { tag: '聚会结账', q: '朋友聚餐结账时，你通常会？', options: [
+        { text: '算好人均明细发群里AA', delta: { R: 9, B: 6 } },
+        { text: '抢先买单“这顿我请！”', delta: { E: 8, D: 7 } },
+        { text: '有人付了就秒转账不拖拉', delta: { B: 7, M: 6 } },
+        { text: '默默记下，下次找机会还', delta: { N: 8, M: 6 } }
+      ]},
+      { tag: '旅行规划', q: '和朋友规划旅行，你喜欢负责？', options: [
+        { text: '做详细攻略和预算规划', delta: { R: 9, D: 5 } },
+        { text: '负责拍照、找美食和活跃气氛', delta: { E: 9, N: 5 } },
+        { text: '你们定路线，我负责拎包兜底', delta: { M: 8, B: 6 } },
+        { text: '随性探索，走到哪算哪', delta: { B: 8, D: 6 } }
+      ]},
+      { tag: '情绪冲突', q: '好朋友因为小事突然对你冷脸？', options: [
+        { text: '当场问清楚“有事直说”', delta: { D: 9, R: 5 } },
+        { text: '先冷静退后，等平复后再聊', delta: { R: 8, B: 7 } },
+        { text: '反思自己是不是说错话了', delta: { M: 9, N: 5 } },
+        { text: '递个零食给个台阶不闹大', delta: { E: 7, M: 8 } }
+      ]},
+      { tag: '深夜失恋', q: '朋友深夜失恋哭着给你打电话？', options: [
+        { text: '陪着一起骂前任给足支持', delta: { E: 9, M: 7 } },
+        { text: '安静听完说“我在呢，想哭就哭”', delta: { M: 9, N: 6 } },
+        { text: '理性帮 Ta 复盘感情不合适处', delta: { R: 9, D: 5 } },
+        { text: '直接打车过去带宵夜陪伴', delta: { E: 8, D: 7 } }
+      ]},
+      { tag: '压力应对', q: '当你自己遇到巨大委屈时？', options: [
+        { text: '自己躲起来消化，扛过去再说', delta: { B: 9, R: 7 } },
+        { text: '找好友疯狂吐槽倾诉', delta: { E: 9, D: 6 } },
+        { text: '写日记听歌吹风慢慢治愈', delta: { N: 8, B: 7 } },
+        { text: '找理智靠谱的朋友分析利弊', delta: { R: 8, M: 5 } }
+      ]},
+      { tag: '生活细节', q: '去朋友家做客，临走时你会？', options: [
+        { text: '顺手收拾垃圾、椅子归位', delta: { M: 8, R: 7 } },
+        { text: '热情邀请“下次来我家玩！”', delta: { E: 9, D: 5 } },
+        { text: '到家后发消息再次感谢', delta: { N: 8, M: 6 } },
+        { text: '干脆利落告别不打扰休息', delta: { B: 8, D: 6 } }
+      ]},
+      { tag: '周末邀约', q: '周末休息却收到三个不同朋友的局？', options: [
+        { text: '果断选最想去的，其余坦诚说明', delta: { D: 8, R: 7 } },
+        { text: '下午喝茶晚上聚餐全赶上', delta: { E: 9, R: 6 } },
+        { text: '哪个都不想去，只想独处充电', delta: { B: 9, R: 5 } },
+        { text: '优先赴约心情不好的朋友', delta: { M: 8, N: 7 } }
+      ]},
+      { tag: '友情观念', q: '你心目中的神仙友情是？', options: [
+        { text: '君子之交淡如水，有事随叫随到', delta: { B: 9, R: 7 } },
+        { text: '每天有聊不完的废话与分享', delta: { E: 9, N: 6 } },
+        { text: '三观契合、一个眼神就懂', delta: { M: 8, N: 8 } },
+        { text: '互相督促一起搞钱搞事业', delta: { R: 8, D: 7 } }
+      ]},
+      { tag: '奶茶拼单', q: '点奶茶时大家都说随便，你通常？', options: [
+        { text: '直接帮大家选好招牌款', delta: { D: 8, R: 7 } },
+        { text: '回忆每个人偏好贴心备注', delta: { M: 9, N: 7 } },
+        { text: '把优惠券算到极致凑满减', delta: { R: 9, B: 5 } },
+        { text: '推荐自己最近喝到的新品', delta: { E: 8, D: 6 } }
+      ]},
+      { tag: '列车终点', q: '列车即将抵达终点站，临别时？', options: [
+        { text: '红着眼眶拥抱，约定下次再聚', delta: { E: 9, N: 8 } },
+        { text: '把照片和卡片塞进行李箱', delta: { M: 9, N: 8 } },
+        { text: '潇洒挥手“江湖路远，有缘再见”', delta: { D: 9, B: 7 } },
+        { text: '建好永久群，核对返程车次', delta: { R: 9, E: 5 } }
+      ]}
+    ];
+
+    let currentOrderNo = '';
+    let activeQuestions = [];
+    let currentQuestionIndex = 0;
+    let userAnswers = [];
+    let latestResultData = null;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderGuestsGrid();
+    });
+
+    function renderGuestsGrid() {
+      const grid = document.getElementById('guests-grid');
+      grid.innerHTML = GUESTS.map((guest, idx) => `
+        <div onclick="openGuestModal('${guest.id}')" class="cartoon-card guest-card p-5 cursor-pointer flex flex-col justify-between bg-gradient-to-br ${guest.cardBg} group">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-[11px] font-black px-2.5 py-1 rounded-full bg-white/90 text-slate-600 shadow-xs">NO.0${idx + 1}</span>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full text-white bg-gradient-to-r ${guest.gradient} truncate">${guest.codename}</span>
+            </div>
+            <div class="w-32 h-32 mx-auto my-2 rounded-3xl bg-white p-1.5 shadow-md border-2 border-white group-hover:scale-105 transition-transform duration-300">
+              ${guest.svg}
+            </div>
+            <div class="text-center mt-3 space-y-1.5">
+              <h3 class="font-cute text-2xl text-slate-800">${guest.name}</h3>
+              <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">${guest.shortDesc}</p>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-black/5">
+            <p class="text-[11px] italic text-slate-500 text-center leading-snug">“${guest.motto}”</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function openGuestModal(guestId) {
+      const guest = GUESTS.find(g => g.id === guestId);
+      if (!guest) return;
+      document.getElementById('modal-header-bg').className = `p-6 text-white flex items-center gap-5 relative bg-gradient-to-r ${guest.gradient}`;
+      document.getElementById('modal-avatar').innerHTML = guest.svg;
+      document.getElementById('modal-tag').textContent = guest.codename;
+      document.getElementById('modal-name').textContent = guest.name;
+      document.getElementById('modal-motto').textContent = `“${guest.motto}”`;
+      document.getElementById('modal-bio').textContent = guest.traitAnalysis;
+      document.getElementById('modal-badges').innerHTML = guest.tags.map(t => `
+        <span class="text-xs font-bold px-3 py-1 rounded-full bg-purple-50 text-purple-700 border border-purple-100">${t}</span>
+      `).join('');
+      const modal = document.getElementById('guest-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal(id) {
+      const m = document.getElementById(id);
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+
+    function closeModalOnBackdrop(e, id) {
+      if (e.target.id === id) closeModal(id);
+    }
+
+    function scrollToOrderInput() {
+      document.getElementById('order-input').focus();
+      document.getElementById('order-input').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    /**
+     * 核心校验：
+     * 1. 小红书订单号格式正则：以大写 P 开头，后接 17-19 位数字（总长度 18-20 位）。
+     * 2. 防二次使用检查：LocalStorage 记录 status === 'completed' 则拦截。
+     * 3. 防猜号防刷限制：1 小时内连续验证失败超过 3 次锁定 1 小时。
+     */
+    function verifyAndStartQuiz() {
+      const inputEl = document.getElementById('order-input');
+      const inputVal = inputEl.value.trim().toUpperCase();
+      const warningEl = document.getElementById('lock-warning');
+
+      // 1. 防猜号防刷锁检查
+      const lockData = JSON.parse(localStorage.getItem('xhs_lock_data') || '{"fails":0, "lockUntil": 0}');
+      const now = Date.now();
+      if (lockData.lockUntil > now) {
+        const leftMin = Math.ceil((lockData.lockUntil - now) / 60000);
+        showToast(`操作过于频繁，已被锁定，请在 ${leftMin} 分钟后再试！`);
+        return;
+      }
+
+      // 2. 格式校验：P开头，后接17-19位数字（总长18-20位）
+      const xhsOrderRegex = /^P\d{17,19}$/;
+      if (!xhsOrderRegex.test(inputVal)) {
+        handleVerificationFailure(lockData, now);
+        return;
+      }
+
+      // 3. 防二次使用校验（用完即焚状态检查）
+      const dbStatus = localStorage.getItem(`xhs_order_${inputVal}`);
+      if (dbStatus === 'completed') {
+        showToast('该订单号已使用，请勿重复测试！');
+        warningEl.textContent = '该订单号已完成过测试，每个订单仅限测一次！';
+        warningEl.classList.remove('hidden');
+        return;
+      }
+
+      // 验证通过，清空防刷计数
+      localStorage.setItem('xhs_lock_data', JSON.stringify({ fails: 0, lockUntil: 0 }));
+      currentOrderNo = inputVal;
+      warningEl.classList.add('hidden');
+
+      // 严格随机抽取 15-25 道题
+      const targetCount = Math.floor(Math.random() * 11) + 15; // 15 到 25 之间的随机整数
+      const shuffled = [...QUESTION_BANK];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      activeQuestions = shuffled.slice(0, targetCount);
+      currentQuestionIndex = 0;
+      userAnswers = new Array(activeQuestions.length).fill(null);
+
+      switchView('quiz');
+      renderCurrentQuestion();
+      showToast('验证成功！欢迎登上友情列车');
+    }
+
+    function handleVerificationFailure(lockData, now) {
+      lockData.fails += 1;
+      let msg = `验证未通过，请检查订单号是否正确。`;
+      if (lockData.fails >= 3) {
+        lockData.lockUntil = now + 60 * 60 * 1000; // 锁定 1 小时
+        msg = '连续验证失败次数过多，设备已被锁定1小时！';
+      } else {
+        msg += ` (当前已失败 ${lockData.fails}/3 次)`;
+      }
+      localStorage.setItem('xhs_lock_data', JSON.stringify(lockData));
+      showToast(msg);
+      const w = document.getElementById('lock-warning');
+      w.textContent = msg;
+      w.classList.remove('hidden');
+    }
+
+    function switchView(vName) {
+      ['home', 'quiz', 'result'].forEach(v => {
+        const el = document.getElementById(`view-${v}`);
+        if (v === vName) {
+          el.classList.remove('hidden');
+          el.classList.remove('animate-enter');
+          void el.offsetWidth;
+          el.classList.add('animate-enter');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goHome() {
+      switchView('home');
+    }
+
+    function renderCurrentQuestion() {
+      const total = activeQuestions.length;
+      const qObj = activeQuestions[currentQuestionIndex];
+      const pct = Math.round(((currentQuestionIndex + 1) / total) * 100);
+
+      document.getElementById('quiz-progress-text').textContent = `第 ${currentQuestionIndex + 1} / ${total} 题`;
+      document.getElementById('quiz-progress-bar').style.width = `${pct}%`;
+      document.getElementById('quiz-train-icon').style.left = `calc(${pct}% - 14px)`;
+
+      document.getElementById('question-tag').textContent = `✨ ${qObj.tag}`;
+      document.getElementById('question-title').textContent = qObj.q;
+
+      const letters = ['A', 'B', 'C', 'D'];
+      const selectedIdx = userAnswers[currentQuestionIndex];
+
+      document.getElementById('options-list').innerHTML = qObj.options.map((opt, idx) => {
+        const isSelected = selectedIdx === idx;
+        return `
+          <button type="button" onclick="selectOption(${idx})"
+            class="option-btn w-full text-left p-4 rounded-2xl bg-white/95 flex items-center gap-3.5 cursor-pointer ${isSelected ? 'selected' : ''}">
+            <span class="w-8 h-8 rounded-xl flex-shrink-0 flex items-center justify-center font-black text-sm ${isSelected ? 'bg-purple-600 text-white' : 'bg-purple-100 text-purple-700'}">${letters[idx]}</span>
+            <span class="text-sm sm:text-base font-bold text-slate-700 leading-snug">${opt.text}</span>
+          </button>
+        `;
+      }).join('');
+
+      document.getElementById('prev-btn').disabled = currentQuestionIndex === 0;
+    }
+
+    function selectOption(optionIdx) {
+      userAnswers[currentQuestionIndex] = optionIdx;
+      renderCurrentQuestion();
+
+      setTimeout(() => {
+        if (currentQuestionIndex < activeQuestions.length - 1) {
+          currentQuestionIndex++;
+          renderCurrentQuestion();
+        } else {
+          completeQuizAndBurnOrder();
+        }
+      }, 220);
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        renderCurrentQuestion();
+      }
+    }
+
+    /**
+     * 用完即焚机制：答完瞬间将该订单号标记为 completed
+     * 并且压入 history，禁止浏览器后退
+     */
+    function completeQuizAndBurnOrder() {
+      // 1. 后端数据库状态标记为 completed
+      localStorage.setItem(`xhs_order_${currentOrderNo}`, 'completed');
+
+      // 2. 启用防后退劫持
+      history.pushState({ page: 'result' }, '', window.location.href);
+      window.onpopstate = function () {
+        history.pushState({ page: 'result' }, '', window.location.href);
+        showToast('🔥 该订单号已触发用完即焚，无法后退重新答题！请直接长按截图保存。');
+      };
+
+      // 3. 计算并呈现结果
+      calculateAndShowResult();
+      showToast('🔥 订单号已用完即焚，报告锁定成功！');
+    }
+
+    function calculateAndShowResult() {
+      const rawScores = { E: 50, B: 50, R: 50, M: 50, D: 50, N: 50 };
+      activeQuestions.forEach((q, qIdx) => {
+        const chosen = q.options[userAnswers[qIdx]];
+        if (chosen && chosen.delta) {
+          Object.entries(chosen.delta).forEach(([k, val]) => { rawScores[k] += val; });
+        }
+      });
+
+      const userVector = {};
+      DIMENSIONS.forEach(dim => {
+        const gain = rawScores[dim.key] - 50;
+        const ratio = Math.min(1, Math.max(0, gain / 35));
+        userVector[dim.key] = Math.round(48 + ratio * 48);
+      });
+
+      let bestGuest = GUESTS[0];
+      let highestScore = -1;
+
+      GUESTS.forEach(guest => {
+        let sqDiffSum = 0;
+        let dotProduct = 0;
+        let normUser = 0;
+        let normGuest = 0;
+
+        DIMENSIONS.forEach(dim => {
+          const u = userVector[dim.key];
+          const g = guest.vector[dim.key];
+          sqDiffSum += Math.pow(u - g, 2);
+          dotProduct += u * g;
+          normUser += u * u;
+          normGuest += g * g;
+        });
+
+        const euclideanDist = Math.sqrt(sqDiffSum / 6);
+        const cosineSim = dotProduct / (Math.sqrt(normUser) * Math.sqrt(normGuest));
+        const distanceScore = Math.max(0, 100 - euclideanDist * 1.65);
+        const combined = distanceScore * 0.7 + (cosineSim * 100) * 0.3;
+
+        if (combined > highestScore) {
+          highestScore = combined;
+          bestGuest = guest;
+        }
+      });
+
+      const matchPercentage = Math.min(98, Math.max(83, Math.round(highestScore)));
+      latestResultData = { guest: bestGuest, userVector, matchPercentage, orderNo: currentOrderNo };
+
+      renderResultPage(latestResultData);
+      switchView('result');
+    }
+
+    function renderResultPage({ guest, userVector, matchPercentage, orderNo }) {
+      document.getElementById('result-order-tag').textContent = `订单：${orderNo}`;
+      document.getElementById('result-banner').className = `p-6 sm:p-9 text-white relative overflow-hidden bg-gradient-to-r ${guest.gradient}`;
+      document.getElementById('result-avatar-box').innerHTML = guest.svg;
+      document.getElementById('result-match-score').textContent = `灵魂契合度 ${matchPercentage}%`;
+      document.getElementById('result-name').textContent = guest.name;
+      document.getElementById('result-codename').textContent = `「${guest.codename}」`;
+      document.getElementById('result-motto').textContent = guest.motto;
+
+      document.getElementById('result-tags').innerHTML = guest.tags.map(t => `
+        <span class="px-3.5 py-1.5 rounded-2xl text-xs sm:text-sm font-black bg-gradient-to-r ${guest.cardBg} text-slate-700 border border-purple-200/80 shadow-xs">${t}</span>
+      `).join('');
+
+      document.getElementById('dimension-bars').innerHTML = DIMENSIONS.map(dim => {
+        const val = userVector[dim.key];
+        return `
+          <div class="flex items-center gap-2.5">
+            <span class="w-16 text-slate-600">${dim.label}</span>
+            <div class="flex-1 h-2.5 bg-slate-100 rounded-full overflow-hidden">
+              <div class="h-full rounded-full transition-all duration-700" style="width: ${val}%; background-color: ${dim.color};"></div>
+            </div>
+            <span class="w-8 text-right font-black" style="color: ${dim.color};">${val}</span>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('result-trait-analysis').textContent = guest.traitAnalysis;
+      document.getElementById('result-friendship-advice').textContent = guest.friendshipAdvice;
+      document.getElementById('result-love-advice').textContent = guest.loveAdvice;
+
+      const bestFriend = GUESTS.find(g => g.id === guest.bestMatchId);
+      const clashFriend = GUESTS.find(g => g.id === guest.clashMatchId);
+
+      if (bestFriend) {
+        document.getElementById('best-match-avatar').innerHTML = bestFriend.svg;
+        document.getElementById('best-match-name').textContent = `${bestFriend.name} · ${bestFriend.codename}`;
+        document.getElementById('best-match-desc').textContent = guest.bestMatchReason;
+      }
+      if (clashFriend) {
+        document.getElementById('clash-match-avatar').innerHTML = clashFriend.svg;
+        document.getElementById('clash-match-name').textContent = `${clashFriend.name} · ${clashFriend.codename}`;
+        document.getElementById('clash-match-desc').textContent = guest.clashMatchReason;
+      }
+
+      drawRadarChart(userVector, guest.accentColor);
+    }
+
+    function drawRadarChart(userVector, accentColor) {
+      const canvas = document.getElementById('radar-canvas');
+      const dpr = window.devicePixelRatio || 1;
+      const size = 310;
+      canvas.width = size * dpr;
+      canvas.height = size * dpr;
+      canvas.style.width = `${size}px`;
+      canvas.style.height = `${size}px`;
+
+      const ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+      ctx.clearRect(0, 0, size, size);
+
+      const cx = size / 2;
+      const cy = size / 2;
+      const maxRadius = 96;
+      const levels = 4;
+      const angleStep = (Math.PI * 2) / 6;
+      const startAngle = -Math.PI / 2;
+
+      for (let lvl = 1; lvl <= levels; lvl++) {
+        const r = (maxRadius / levels) * lvl;
+        ctx.beginPath();
+        for (let i = 0; i < 6; i++) {
+          const angle = startAngle + i * angleStep;
+          const x = cx + r * Math.cos(angle);
+          const y = cy + r * Math.sin(angle);
+          if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.fillStyle = lvl % 2 === 0 ? 'rgba(243, 232, 255, 0.35)' : 'rgba(255, 255, 255, 0.6)';
+        ctx.fill();
+        ctx.strokeStyle = '#e2e8f0';
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+      }
+
+      ctx.font = 'bold 12px "Noto Sans SC", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+
+      DIMENSIONS.forEach((dim, i) => {
+        const angle = startAngle + i * angleStep;
+        const xEnd = cx + maxRadius * Math.cos(angle);
+        const yEnd = cy + maxRadius * Math.sin(angle);
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.lineTo(xEnd, yEnd);
+        ctx.strokeStyle = '#cbd5e1';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        const labelRadius = maxRadius + 28;
+        const lx = cx + labelRadius * Math.cos(angle);
+        const ly = cy + labelRadius * Math.sin(angle);
+        ctx.fillStyle = '#334155';
+        ctx.fillText(dim.label, lx, ly - 6);
+        ctx.fillStyle = dim.color;
+        ctx.font = '900 12px "Noto Sans SC", sans-serif';
+        ctx.fillText(`${userVector[dim.key]}%`, lx, ly + 9);
+        ctx.font = 'bold 12px "Noto Sans SC", sans-serif';
+      });
+
+      const points = DIMENSIONS.map((dim, i) => {
+        const valRatio = userVector[dim.key] / 100;
+        const r = maxRadius * valRatio;
+        const angle = startAngle + i * angleStep;
+        return { x: cx + r * Math.cos(angle), y: cy + r * Math.sin(angle) };
+      });
+
+      const grad = ctx.createLinearGradient(0, 0, size, size);
+      grad.addColorStop(0, 'rgba(244, 63, 94, 0.38)');
+      grad.addColorStop(0.5, 'rgba(139, 92, 246, 0.38)');
+      grad.addColorStop(1, 'rgba(14, 165, 233, 0.38)');
+
+      ctx.beginPath();
+      points.forEach((pt, idx) => {
+        if (idx === 0) ctx.moveTo(pt.x, pt.y); else ctx.lineTo(pt.x, pt.y);
+      });
+      ctx.closePath();
+      ctx.fillStyle = grad;
+      ctx.fill();
+      ctx.strokeStyle = accentColor || '#8b5cf6';
+      ctx.lineWidth = 2.5;
+      ctx.stroke();
+
+      points.forEach((pt, idx) => {
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, 4.5, 0, Math.PI * 2);
+        ctx.fillStyle = '#ffffff';
+        ctx.fill();
+        ctx.strokeStyle = DIMENSIONS[idx].color;
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
+      });
+    }
+
+    function generatePoster() {
+      if (!latestResultData) return;
+      const { guest, userVector, matchPercentage, orderNo } = latestResultData;
+
+      const posterCanvas = document.createElement('canvas');
+      const W = 750;
+      const H = 1120;
+      posterCanvas.width = W;
+      posterCanvas.height = H;
+      const ctx = posterCanvas.getContext('2d');
+
+      const bgGrad = ctx.createLinearGradient(0, 0, W, H);
+      bgGrad.addColorStop(0, '#ffe4e6');
+      bgGrad.addColorStop(0.45, '#e0f2fe');
+      bgGrad.addColorStop(1, '#f3e8ff');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, W, H);
+
+      drawRoundRect(ctx, 40, 44, W - 80, H - 88, 36);
+      ctx.fillStyle = 'rgba(255,255,255,0.95)';
+      ctx.fill();
+
+      const topGrad = ctx.createLinearGradient(40, 44, W - 40, 310);
+      topGrad.addColorStop(0, '#f43f5e');
+      topGrad.addColorStop(0.5, '#8b5cf6');
+      topGrad.addColorStop(1, '#0ea5e9');
+      ctx.save();
+      drawRoundRect(ctx, 40, 44, W - 80, 270, 36);
+      ctx.clip();
+      ctx.fillStyle = topGrad;
+      ctx.fillRect(40, 44, W - 80, 270);
+      ctx.restore();
+
+      ctx.fillStyle = 'rgba(255,255,255,0.9)';
+      ctx.font = 'bold 22px "Noto Sans SC", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(`🎫 小红书订单号：${orderNo} · 契合度 ${matchPercentage}%`, W / 2, 102);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '900 50px "Noto Sans SC", sans-serif';
+      ctx.fillText(`你最像「${guest.name}」`, W / 2, 175);
+
+      ctx.font = 'bold 26px "Noto Sans SC", sans-serif';
+      ctx.fillStyle = '#fef08a';
+      ctx.fillText(guest.codename, W / 2, 226);
+
+      ctx.font = 'italic 20px "Noto Sans SC", sans-serif';
+      ctx.fillStyle = 'rgba(255,255,255,0.95)';
+      ctx.fillText(`“${guest.motto}”`, W / 2, 268);
+
+      const radarSrc = document.getElementById('radar-canvas');
+      ctx.drawImage(radarSrc, (W - 300) / 2, 318, 300, 300);
+
+      ctx.font = 'bold 21px "Noto Sans SC", sans-serif';
+      ctx.fillStyle = '#7c3aed';
+      ctx.fillText(guest.tags.slice(0, 3).join('   '), W / 2, 655);
+
+      ctx.textAlign = 'left';
+      ctx.fillStyle = '#1e293b';
+      ctx.font = '900 24px "Noto Sans SC", sans-serif';
+      ctx.fillText('✨ 性格特质深度分析：', 72, 712);
+
+      ctx.font = '20px "Noto Sans SC", sans-serif';
+      ctx.fillStyle = '#475569';
+      wrapCanvasText(ctx, guest.traitAnalysis, 72, 752, W - 144, 32, 4);
+
+      const bestFriend = GUESTS.find(g => g.id === guest.bestMatchId);
+      const clashFriend = GUESTS.find(g => g.id === guest.clashMatchId);
+
+      drawRoundRect(ctx, 70, 920, W - 140, 84, 18);
+      ctx.fillStyle = '#f8fafc';
+      ctx.fill();
+      ctx.font = 'bold 20px "Noto Sans SC", sans-serif';
+      ctx.fillStyle = '#059669';
+      ctx.fillText(`💚 最合拍：${bestFriend ? bestFriend.name : ''}（${bestFriend ? bestFriend.codename : ''}）`, 92, 955);
+      ctx.fillStyle = '#d97706';
+      ctx.fillText(`⚡ 易闹别扭：${clashFriend ? clashFriend.name : ''}（${clashFriend ? clashFriend.codename : ''}）`, 92, 988);
+
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = 'bold 18px "Noto Sans SC", sans-serif';
+      ctx.fillText('小红书自动发货 · 无人值守心理测试系统', W / 2, 1050);
+
+      const dataUrl = posterCanvas.toDataURL('image/png');
+      document.getElementById('poster-preview-img').src = dataUrl;
+      const modal = document.getElementById('poster-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function downloadPoster() {
+      const img = document.getElementById('poster-preview-img');
+      if (!img.src) return;
+      const link = document.createElement('a');
+      link.download = `后会友期报告_${latestResultData.guest.name}.png`;
+      link.href = img.src;
+      link.click();
+      showToast('🎉 海报已生成，您可以长按图片保存到手机相册！');
+    }
+
+    function drawRoundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+
+    function wrapCanvasText(ctx, text, x, y, maxWidth, lineHeight, maxLines) {
+      let line = '';
+      let lineCount = 0;
+      for (let i = 0; i < text.length; i++) {
+        const testLine = line + text[i];
+        const metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && i > 0) {
+          lineCount++;
+          if (lineCount >= maxLines) {
+            ctx.fillText(line.slice(0, -1) + '…', x, y);
+            return;
+          }
+          ctx.fillText(line, x, y);
+          line = text[i];
+          y += lineHeight;
+        } else {
+          line = testLine;
+        }
+      }
+      ctx.fillText(line, x, y);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.remove('opacity-0');
+      toast.classList.add('opacity-100');
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0');
+      }, 2600);
+    }
+  </script>
+</body>
+</html>
